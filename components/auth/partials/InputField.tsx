@@ -2,6 +2,7 @@ import React, { ChangeEvent, forwardRef, useImperativeHandle } from 'react';
 
 interface InputFieldProps {
   placeholder: string;
+  id: string;
   name: string;
   type: string;
   value: string;
@@ -19,6 +20,7 @@ interface InputFieldProps {
 const InputField = forwardRef(
   (
     {
+      id,
       placeholder,
       name,
       type,
@@ -108,6 +110,7 @@ const InputField = forwardRef(
       <div className={`w-full ${withMarginBottom ? 'mb-4' : ''}`}>
         {label && <label className="w-full block mb-1">{label}</label>}
         <input
+          id={id}
           ref={ref}
           name={name}
           type={type}

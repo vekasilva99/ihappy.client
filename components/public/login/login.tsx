@@ -28,7 +28,7 @@ export default function login() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    Router.prefetch('/dashboard');
+    //Router.prefetch('/dashboard');
   }, []);
 
   React.useEffect(() => {
@@ -99,14 +99,21 @@ export default function login() {
         <form
           className="flex flex-col justify-center bg-white h-screen"
           method="POST"
+          id="form-login"
           onSubmit={onSubmit}
         >
-          <div className="text-gray-800 text-3xl lg:text-5xl text-center mb-4 lg:mb-50 px-4 py-2 capitalize">
+          <div
+            id="title-login"
+            className="text-gray-800 text-3xl lg:text-5xl text-center mb-4 lg:mb-50 px-4 py-2 capitalize"
+          >
             Inicia Sesion
           </div>
 
           {userError && (
-            <div className="lg:w-7/12 w-full mx-auto text-gray-700 text-center mb-1 rounded px-4 py-2 capitalize bg-red-300 border border-red-500">
+            <div
+              id="error-login"
+              className="lg:w-7/12 w-full mx-auto text-gray-700 text-center mb-1 rounded px-4 py-2 capitalize bg-red-300 border border-red-500"
+            >
               {userError}
             </div>
           )}
@@ -115,6 +122,7 @@ export default function login() {
             <div className="mb-6 flex flex-row justify-center items-center">
               <div className="lg:w-7/12 w-full">
                 <InputField
+                  id="username-input"
                   name="email"
                   type="text"
                   label="Ingrese su email"
@@ -130,6 +138,7 @@ export default function login() {
             <div className="mb-6 flex flex-row justify-center items-center">
               <div className="lg:w-7/12 w-full ">
                 <InputField
+                  id="password-input"
                   name="password"
                   type="password"
                   label="Ingrese su Contraseña"
@@ -146,6 +155,7 @@ export default function login() {
             <div className="w-full">
               <button
                 type="submit"
+                id="btn-iniciar-sesion"
                 className={`
                                     w-full lg:w-auto mx-auto block shadow focus:outline-none py-2 px-4 rounded
                                     ${
